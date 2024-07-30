@@ -132,6 +132,8 @@ select comments.comment, users.username from comments
 left join users on users.id=comments.user_id
 
 <!-- 5 -->
-select films.title, count(comments.film_id) as count_of_comments from films
+select films.title, 
+count(comments.film_id) as count_of_comments 
+from films
 left join comments on comments.film_id=films.id
 group by comments.film_id
